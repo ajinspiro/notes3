@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Anonymous Pro;
+  --bgc: #fff;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100%;
+}
+
+#container>section {
+  padding: 2rem;
+}
+
+#parent {
+  border: 1px solid black;
+  padding: 1px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#parent::before {
+  content: "<div id=parent>";
+  top: -0.7rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: var(--bgc);
+}
+
+#parent div {
+  height: 10rem;
+  width: 15rem;
+  border: 3px solid;
+  position: relative;
+}
+
+#parent div::before {
+  content: "<div id=child-a>";
+  position: absolute;
+  left: 2.5rem;
+}
+
+#css-rule-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 55%;
+  gap: 0.4rem;
+  font-size: 1.5rem;
+}
+
+#line-2 {
+  margin-left: 2rem;
+}
